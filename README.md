@@ -63,7 +63,7 @@ Public Const ApiKey As String = "YOUR-APIKEY"  'To get API-KEY please visit http
 برای مشاهده راهنمای کامل استفاده از 
 وب سرویس کاوه نگار به 
 بخش
-<a href="http://kavenegar.com/soap.html">مستندات پیام کوتاه SOAP</a>
+<a href="http://kavenegar.com/soap.html">مستندات پیام کوتاه</a>
 مراجعه بفرمائید
 </p>
 <p>
