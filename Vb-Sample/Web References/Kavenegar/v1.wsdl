@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://api.kavenegar.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://api.kavenegar.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://api.kavenegar.com/">
+      <s:element name="SendSimpleByApikey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apikey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="receptor" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="unixdate" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgmode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendSimpleByApikeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSimpleByApikeyResult" type="tns:ArrayOfLong" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLong">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="long" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendSimpleByLoginInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="receptor" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="unixdate" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgmode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSimpleByLoginInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSimpleByLoginInfoResult" type="tns:ArrayOfLong" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendArrayByApikey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apikey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sender" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="receptor" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="unixdate" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgmode" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendArrayByApikeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendArrayByApikeyResult" type="tns:ArrayOfLong" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendArrayByLoginInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sender" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="receptor" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="unixdate" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgmode" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendArrayByLoginInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendArrayByLoginInfoResult" type="tns:ArrayOfLong" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusByApikey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apikey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageid" type="tns:ArrayOfLong" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusByApikeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatusByApikeyResult" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusByLoginInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageid" type="tns:ArrayOfLong" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusByLoginInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatusByLoginInfoResult" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelByApikey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apikey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageid" type="tns:ArrayOfLong" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelByApikeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelByApikeyResult" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelByLoginInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageid" type="tns:ArrayOfLong" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelByLoginInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelByLoginInfoResult" type="tns:ArrayOfInt" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveByApikey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apikey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isread" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveByApikeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiveByApikeyResult" type="tns:ArrayOfApiReceive" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfApiReceive">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ApiReceive" nillable="true" type="tns:ApiReceive" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ApiReceive">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="messageid" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="receptor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="date" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReceiveByLoginInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lineNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isread" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveByLoginInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiveByLoginInfoResult" type="tns:ArrayOfApiReceive" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemainCreditByApiKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="apikey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemainCreditByApiKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemainCreditByApiKeyResult" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemainCreditByLoginInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemainCreditByLoginInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemainCreditByLoginInfoResult" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusmessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendSimpleByApikeySoapIn">
+    <wsdl:part name="parameters" element="tns:SendSimpleByApikey" />
+  </wsdl:message>
+  <wsdl:message name="SendSimpleByApikeySoapOut">
+    <wsdl:part name="parameters" element="tns:SendSimpleByApikeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSimpleByLoginInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSimpleByLoginInfo" />
+  </wsdl:message>
+  <wsdl:message name="SendSimpleByLoginInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSimpleByLoginInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendArrayByApikeySoapIn">
+    <wsdl:part name="parameters" element="tns:SendArrayByApikey" />
+  </wsdl:message>
+  <wsdl:message name="SendArrayByApikeySoapOut">
+    <wsdl:part name="parameters" element="tns:SendArrayByApikeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendArrayByLoginInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SendArrayByLoginInfo" />
+  </wsdl:message>
+  <wsdl:message name="SendArrayByLoginInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SendArrayByLoginInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusByApikeySoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatusByApikey" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusByApikeySoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatusByApikeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusByLoginInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatusByLoginInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusByLoginInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatusByLoginInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelByApikeySoapIn">
+    <wsdl:part name="parameters" element="tns:CancelByApikey" />
+  </wsdl:message>
+  <wsdl:message name="CancelByApikeySoapOut">
+    <wsdl:part name="parameters" element="tns:CancelByApikeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelByLoginInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelByLoginInfo" />
+  </wsdl:message>
+  <wsdl:message name="CancelByLoginInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelByLoginInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveByApikeySoapIn">
+    <wsdl:part name="parameters" element="tns:ReceiveByApikey" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveByApikeySoapOut">
+    <wsdl:part name="parameters" element="tns:ReceiveByApikeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveByLoginInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceiveByLoginInfo" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveByLoginInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceiveByLoginInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemainCreditByApiKeySoapIn">
+    <wsdl:part name="parameters" element="tns:RemainCreditByApiKey" />
+  </wsdl:message>
+  <wsdl:message name="RemainCreditByApiKeySoapOut">
+    <wsdl:part name="parameters" element="tns:RemainCreditByApiKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemainCreditByLoginInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:RemainCreditByLoginInfo" />
+  </wsdl:message>
+  <wsdl:message name="RemainCreditByLoginInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:RemainCreditByLoginInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="v1Soap">
+    <wsdl:operation name="SendSimpleByApikey">
+      <wsdl:input message="tns:SendSimpleByApikeySoapIn" />
+      <wsdl:output message="tns:SendSimpleByApikeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSimpleByLoginInfo">
+      <wsdl:input message="tns:SendSimpleByLoginInfoSoapIn" />
+      <wsdl:output message="tns:SendSimpleByLoginInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendArrayByApikey">
+      <wsdl:input message="tns:SendArrayByApikeySoapIn" />
+      <wsdl:output message="tns:SendArrayByApikeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendArrayByLoginInfo">
+      <wsdl:input message="tns:SendArrayByLoginInfoSoapIn" />
+      <wsdl:output message="tns:SendArrayByLoginInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusByApikey">
+      <wsdl:input message="tns:GetStatusByApikeySoapIn" />
+      <wsdl:output message="tns:GetStatusByApikeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusByLoginInfo">
+      <wsdl:input message="tns:GetStatusByLoginInfoSoapIn" />
+      <wsdl:output message="tns:GetStatusByLoginInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelByApikey">
+      <wsdl:input message="tns:CancelByApikeySoapIn" />
+      <wsdl:output message="tns:CancelByApikeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelByLoginInfo">
+      <wsdl:input message="tns:CancelByLoginInfoSoapIn" />
+      <wsdl:output message="tns:CancelByLoginInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveByApikey">
+      <wsdl:input message="tns:ReceiveByApikeySoapIn" />
+      <wsdl:output message="tns:ReceiveByApikeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveByLoginInfo">
+      <wsdl:input message="tns:ReceiveByLoginInfoSoapIn" />
+      <wsdl:output message="tns:ReceiveByLoginInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemainCreditByApiKey">
+      <wsdl:input message="tns:RemainCreditByApiKeySoapIn" />
+      <wsdl:output message="tns:RemainCreditByApiKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemainCreditByLoginInfo">
+      <wsdl:input message="tns:RemainCreditByLoginInfoSoapIn" />
+      <wsdl:output message="tns:RemainCreditByLoginInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="v1Soap" type="tns:v1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSimpleByApikey">
+      <soap:operation soapAction="http://api.kavenegar.com/SendSimpleByApikey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSimpleByLoginInfo">
+      <soap:operation soapAction="http://api.kavenegar.com/SendSimpleByLoginInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendArrayByApikey">
+      <soap:operation soapAction="http://api.kavenegar.com/SendArrayByApikey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendArrayByLoginInfo">
+      <soap:operation soapAction="http://api.kavenegar.com/SendArrayByLoginInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusByApikey">
+      <soap:operation soapAction="http://api.kavenegar.com/GetStatusByApikey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusByLoginInfo">
+      <soap:operation soapAction="http://api.kavenegar.com/GetStatusByLoginInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelByApikey">
+      <soap:operation soapAction="http://api.kavenegar.com/CancelByApikey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelByLoginInfo">
+      <soap:operation soapAction="http://api.kavenegar.com/CancelByLoginInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveByApikey">
+      <soap:operation soapAction="http://api.kavenegar.com/ReceiveByApikey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveByLoginInfo">
+      <soap:operation soapAction="http://api.kavenegar.com/ReceiveByLoginInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemainCreditByApiKey">
+      <soap:operation soapAction="http://api.kavenegar.com/RemainCreditByApiKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemainCreditByLoginInfo">
+      <soap:operation soapAction="http://api.kavenegar.com/RemainCreditByLoginInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="v1Soap12" type="tns:v1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSimpleByApikey">
+      <soap12:operation soapAction="http://api.kavenegar.com/SendSimpleByApikey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSimpleByLoginInfo">
+      <soap12:operation soapAction="http://api.kavenegar.com/SendSimpleByLoginInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendArrayByApikey">
+      <soap12:operation soapAction="http://api.kavenegar.com/SendArrayByApikey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendArrayByLoginInfo">
+      <soap12:operation soapAction="http://api.kavenegar.com/SendArrayByLoginInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusByApikey">
+      <soap12:operation soapAction="http://api.kavenegar.com/GetStatusByApikey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusByLoginInfo">
+      <soap12:operation soapAction="http://api.kavenegar.com/GetStatusByLoginInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelByApikey">
+      <soap12:operation soapAction="http://api.kavenegar.com/CancelByApikey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelByLoginInfo">
+      <soap12:operation soapAction="http://api.kavenegar.com/CancelByLoginInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveByApikey">
+      <soap12:operation soapAction="http://api.kavenegar.com/ReceiveByApikey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveByLoginInfo">
+      <soap12:operation soapAction="http://api.kavenegar.com/ReceiveByLoginInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemainCreditByApiKey">
+      <soap12:operation soapAction="http://api.kavenegar.com/RemainCreditByApiKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemainCreditByLoginInfo">
+      <soap12:operation soapAction="http://api.kavenegar.com/RemainCreditByLoginInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="v1">
+    <wsdl:port name="v1Soap" binding="tns:v1Soap">
+      <soap:address location="http://api.kavenegar.com/soap/v1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="v1Soap12" binding="tns:v1Soap12">
+      <soap12:address location="http://api.kavenegar.com/soap/v1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
